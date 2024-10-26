@@ -1,0 +1,63 @@
+---
+import Base from "@/layouts/Base.astro";
+import Banner from "@/layouts/components/Banner.astro";
+import KeyFeatures from "@/layouts/components/KeyFeatures.astro";
+import Testimonial from "@/layouts/components/Testimonial.astro";
+import Service from "@/layouts/components/Service.astro";
+import Cta from "@/layouts/partials/Cta.astro";
+import { getEntryBySlug } from "astro:content";
+import Contact from "./contact.astro";
+import CounterComponent from "@/components/about/CounterComponent.astro";
+import ProjecManagement from "@/layouts/components/features/ProjecManagement.astro";
+import CareerBenifits from "@/components/career/CareerBenifits.astro";
+import type { TCareerIndex } from "@/types";
+import Works from "@/components/about/Works.astro";
+import HowItWorks from "./how-it-works.astro";
+
+const about = await getEntryBySlug("about", "index");
+const { counter, features } = about.data;
+const careerIndex = (await getEntryBySlug<any, string>(
+  "careers",
+  "-index"
+)) as TCareerIndex;
+
+const homepage = await getEntryBySlug("homepage", "index");
+const { banner, key_features, service, testimonial } = homepage.data;
+const { project_management } = homepage.data;
+const { benifits } = careerIndex.data;
+
+---
+
+<Base>
+  <!-- banner -->
+  <Banner banner={banner} />
+  <section class="page-hero pb-32">
+    <div class="page-hero-content mx-auto max-w-[1200px] text-center">
+      <h2 class="my-10">Chez CHARRADI SERVICES</h2>
+      <p class="m-4">
+        Nous comprenons que le processus de demande de visa peut être complexe
+        et stressant. C'est pourquoi nous proposons une gamme complète de
+        services conçus pour simplifier chaque étape de votre voyage. Que vous
+        ayez besoin d'aide pour préparer vos documents, de conseils pour remplir
+        votre demande ou d'un suivi de votre statut, notre équipe d'experts est
+        là pour vous accompagner à chaque étape. Explorez nos services
+        ci-dessous et découvrez comment nous pouvons vous aider à réaliser vos
+        projets de voyage en toute sérénité.
+      </p>
+      <CounterComponent counter={counter} />
+    </div>
+  </section>
+  <Works features={features} />
+  <HowItWorks />
+
+  <!-- key features -->
+  <!-- <CareerBenifits benifits={benifits} client:load /> -->
+  <!-- <ProjecManagement project_management={project_management} /> -->
+  <!-- <KeyFeatures key_features={key_features} /> -->
+  <!-- service -->
+  <!-- <Service service={service} /> -->
+  <!-- testimonial -->
+  <!-- <Testimonial testimonial={testimonial} /> -->
+  <Contact />
+  <!-- <Cta /> -->
+</Base>

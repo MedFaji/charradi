@@ -1,0 +1,66 @@
+{
+  "main": [
+    {
+      "name": "Accueil",
+      "url": "/"
+    },
+    {
+      "name": "Services",
+      "url": "/services",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "Préparation & Vérification des Documents",
+          "url": "/preparation"
+        },
+        {
+          "name": "Assistance à la Demande & Remplissage de Formulaire",
+          "url": "/assistance"
+        },
+        {
+          "name": "Suivi de Visa & Mises à Jour de Statut",
+          "url": "/suivi"
+        },
+        {
+          "name": "Assurance Voyage",
+          "url": "/assurance"
+        },
+        {
+          "name": "Réservations de Vol et d'Hébergement",
+          "url": "/reservations-vol-hebergement"
+        },
+        {
+          "name": "Offres Complètes de Forfaits Voyage",
+          "url": "/forfaits"
+        }
+      ]
+    },
+    {
+      "name": "Comment ça marche ?",
+      "url": "/comment-ca-marche"
+    },
+    {
+      "name": "À Propos de Nous",
+      "url": "/a-propos-de-nous"
+    }
+  ],
+
+  "footer": [
+    {
+      "name": "À Propos de Nous",
+      "url": "/a-propos-de-nous"
+    },
+    {
+      "name": "Services",
+      "url": "/services"
+    },
+    {
+      "name": "Contact",
+      "url": "/contact"
+    },
+    {
+      "name": "Changelog",
+      "url": "/changelog"
+    }
+  ]
+}
